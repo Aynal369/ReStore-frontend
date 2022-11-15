@@ -4,7 +4,7 @@ import payment from "../../../../images/payment.png";
 
 const Copyright = () => {
   return (
-    <div className="d-md-flex justify-content-between align-items-center border-top bg-light">
+    <div className="d-md-flex justify-content-between align-items-center border-top bg-light text-center">
       <div className="text-sm-center py-3">
         <small>
           Copyright &copy; {new Date().getFullYear()}

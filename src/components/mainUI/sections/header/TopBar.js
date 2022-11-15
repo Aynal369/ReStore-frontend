@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaUserAlt, FaSignInAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
@@ -20,18 +21,22 @@ const TopBar = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center text-muted py-2">
-          <div className="d-flex me-5">
-            <FaSignInAlt size={13} className="mt-1 me-2" />
-            <p className="m-0">
-              <small>Sign in</small>
-            </p>
-          </div>
-          <div className="d-flex">
-            <FaUserAlt size={13} className="mt-1 me-2" />
-            <p className="m-0">
-              <small>Register</small>
-            </p>
-          </div>
+          <Link to="/login">
+            <div className="d-flex me-5">
+              <FaSignInAlt size={13} className="mt-2 me-2" />
+              <p className="m-0">
+                <small>Login</small>
+              </p>
+            </div>
+          </Link>
+          <Link to="/register">
+            <div className="d-flex">
+              <FaUserAlt size={13} className="mt-1 me-2" />
+              <p className="m-0">
+                <small>Register</small>
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

@@ -11,8 +11,8 @@ const LatestProducts = () => {
   return (
     <section>
       <div className="container-fluid">
-        <h4 className="mt-5 border-bottom">New Products</h4>
-        <div className="row g-4 my-4">
+        <h3 className="mt-5">New Products</h3>
+        <div className="row g-4 my-3">
           {products.slice(0, 8).map((item, index) => (
             <ProductItem item={item} key={index} />
           ))}
