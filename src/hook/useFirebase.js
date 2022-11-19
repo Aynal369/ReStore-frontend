@@ -58,7 +58,7 @@ const useFirebase = () => {
   };
   const clientSaveToDatabase = (userData) => {
     axios
-      .post("http://localhost:5000/app/v1/users", userData)
+      .post("https://villa-shop-backend.vercel.app/app/v1/users", userData)
       .then((res) => {
         console.log(res.data?.data);
       })
@@ -74,7 +74,7 @@ const useFirebase = () => {
         if (user) {
           setUsers(user);
           setIsLoggedIn(true);
-          handleJsonWebToken(user.email);
+          //  handleJsonWebToken(user.email);
           const destination = location.state?.from || "/";
           navigate(destination);
         }
@@ -90,12 +90,12 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
-  const handleJsonWebToken = (email) => {
+  /*  const handleJsonWebToken = (email) => {
     axios
-      .put(`http://localhost:5000/app/v1/users?email=${email}`)
+      .put(`https://villa-shop-backend.vercel.app/app/v1/users?email=${email}`)
       .then((res) => {})
       .catch((err) => {});
-  };
+  }; */
   const handlePasswordResetEmail = (email, navigate, location) => {
     const auth = getAuth();
     sendPasswordResetEmail(auth, email)

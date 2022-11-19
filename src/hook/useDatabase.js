@@ -7,10 +7,10 @@ const useDatabase = () => {
   const [user, setUser] = useState({});
   const { users } = useAuth();
 
-  useEffect(() => {
+  /*  useEffect(() => {
     let subscribed = true;
     axios
-      .get(`http://localhost:5000/app/v1/users?email=${users.email}`)
+      .get(`https://villa-shop-backend.vercel.app/app/v1/users?email=${users.email}`)
       .then((res) => {
         if (subscribed) {
           // console.log(res.data?.data);
@@ -21,7 +21,7 @@ const useDatabase = () => {
         console.log(err.response?.data);
       });
     return () => (subscribed = false);
-  }, [users.email]);
+  }, [users.email]); */
 
   const buttonRefresh = () => {
     setIsClick(true);

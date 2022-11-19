@@ -5,29 +5,20 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearCart } from "../redux/features/cart/cartSlice";
+import { toast } from "react-toastify";
 
 const Checkout = () => {
   const [agree, setAgree] = useState(false);
-  const { isClick, setIsClick, buttonRefresh } = useDatabase();
+  const { setIsClick, buttonRefresh } = useDatabase();
   const { register, handleSubmit } = useForm();
   const cart = useSelector((state) => state.cart);
   const { cartTotalAmount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const onSubmit = (data) => {
     setIsClick(true);
-    const fullName = data.fullName;
-    const email = data.email;
-    const phone = data.phone;
-    const orderData = {
-      fullName,
-      email,
-      phone,
-      order: [...cart],
-      total: cartTotalAmount,
-    };
-    console.log(orderData);
+    toast.success("congratulations! You are successfully checkout");
+    navigate("/");
     dispatch(clearCart());
     buttonRefresh();
   };

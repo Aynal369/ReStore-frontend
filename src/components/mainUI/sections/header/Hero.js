@@ -1,7 +1,7 @@
 import React from "react";
 import banner1 from "../../../../images/portfolio-1.jpg";
-import banner2 from "../../../../images/portfolio-2.jpg";
-import banner3 from "../../../../images/portfolio-4.jpg";
+import banner2 from "../../../../images/portfolio-4.jpg";
+import banner3 from "../../../../images/portfolio-9.jpg";
 
 const Hero = () => {
   return (

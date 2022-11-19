@@ -13,7 +13,6 @@ import AuthProvider from "./authentication/AuthProvider";
 import ShoppingCart from "./views/ShoppingCart";
 import Wishlist from "./views/Wishlist";
 import Checkout from "./views/Checkout";
-import RequireAuth from "./authentication/RequireAuth";
 
 function App() {
   return (
@@ -23,14 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route
-            path="/checkout"
-            element={
-              <RequireAuth>
-                <Checkout />
-              </RequireAuth>
-            }
-          />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
